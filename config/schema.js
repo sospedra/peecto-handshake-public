@@ -22,7 +22,7 @@ module.exports = convict({
   },
   env: {
     doc: 'The application environment.',
-    format: ['prod', 'dev', 'test'],
+    format: ['production', 'dev', 'test'],
     default: 'dev',
     env: 'NODE_ENV'
   },
@@ -36,7 +36,7 @@ module.exports = convict({
   port: {
     doc: 'The port to bind.',
     format: 'port',
-    default: 9000,
+    default: (process.env.PORT || 9000),
     env: 'PORT',
     arg: 'port'
   },
